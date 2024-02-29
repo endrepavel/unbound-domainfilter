@@ -46,7 +46,6 @@ def operate(id, event, qstate, qdata):
             if (qstate.qinfo.qtype == RR_TYPE_A) or (qstate.qinfo.qtype == RR_TYPE_ANY):
                 msg.answer.append("%s 10 IN A %s" % (qstate.qinfo.qname_str, intercept_address))
 
-
             if not msg.set_return_msg(qstate):
                 qstate.ext_state[id] = MODULE_ERROR 
                 return True
